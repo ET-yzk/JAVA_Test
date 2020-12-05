@@ -46,6 +46,7 @@ public class Test_9_1_J {
         dataset.addValue(500, "北京", "荔枝");
         dataset.addValue(500, "上海", "荔枝");
         dataset.addValue(500, "广州", "荔枝");
+        dataset.addValue(600, "Earth", "Skye");
 
         JFreeChart chart1 = ChartFactory.createBarChart3D("水果产量图", "水果", "水果", dataset, PlotOrientation.VERTICAL, true, true, true);
         ChartFrame frame = new ChartFrame("水果产量图 ", chart1, true);
