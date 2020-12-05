@@ -1,3 +1,7 @@
 /data/
 /Library/
 /venv/
+/JAVA_test.iml
+/.idea/
+/out/
+/lib/
