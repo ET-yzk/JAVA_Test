@@ -1,0 +1,31 @@
+package com.test9.Test_9_Data;
+
+import java.util.Random;
+class My {
+
+    void test() {
+        Random r=new Random(); 
+        int N=1000;
+        int a[]=new int[N];
+        int b[]=new int[100]; 
+
+                for (int i = 0; i < 100; i++) {
+            for (int j : a) {
+                j=r.nextInt(100)+1;                 if (j==(i+1)){
+                    b[i]+=1;
+                }
+            }
+        }
+
+        for (int i = 0; i <100 ; i++) {
+            System.out.println("整数"+(i+1)+"出现次数:"+b[i]);
+        }
+    }
+}
+
+public class My_Test {
+    public static void main(String[] args) {
+        My my = new My();
+        my.test();
+    }
+}

@@ -23,7 +23,7 @@ class FileClassCopy {
         for (File srcfile : srcList) {
 //            System.out.println(srcfile);
             if (srcfile.isDirectory()) {
-                //新建对应的拷贝目录
+                // 新建对应的拷贝目录
 //                String srcDirectory = srcfile.getAbsolutePath();
                 // 在split()中，"\\\\"代表'\'，"\\."代表'.'
                 String destDirectory = destFile.getAbsolutePath() + "\\" + srcfile.getName();//todo 取出srcFile和destFile最后不同的路径  srcfile.getName()同srcDirectory.split("\\\\")[srcDirectory.split("\\\\").length - 1]
