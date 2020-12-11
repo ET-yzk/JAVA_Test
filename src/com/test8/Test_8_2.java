@@ -1,71 +1,11 @@
 package com.test8;
 
-import java.io.*;
-
-class FileClassCopy {
-    // 文件夹复制
-    void allCopy(String srcPath, String destPath) {
-        //源目录
-        File srcFile = new File(srcPath);
-        //目标目录
-        File destFile = new File(destPath);
-        //拷贝目录
-        copyDirectory(srcFile, destFile);
-    }
-
-    /**
-     * @param srcFile  源目录
-     * @param destFile 目标目录
-     */
-    void copyDirectory(File srcFile, File destFile) {
-        File[] srcList = srcFile.listFiles();
-
-        for (File srcfile : srcList) {
-//            System.out.println(srcfile);
-            if (srcfile.isDirectory()) {
-                // 新建对应的拷贝目录
-//                String srcDirectory = srcfile.getAbsolutePath();
-                // 在split()中，"\\\\"代表'\'，"\\."代表'.'
-                String destDirectory = destFile.getAbsolutePath() + "\\" + srcfile.getName();//todo 取出srcFile和destFile最后不同的路径  srcfile.getName()同srcDirectory.split("\\\\")[srcDirectory.split("\\\\").length - 1]
-
-                // 新建目录
-                File newFile = new File(destDirectory);
-                if (!newFile.exists()) {
-                    newFile.mkdirs();
-                }
-
-                // 递归新的目录
-                copyDirectory(srcfile, newFile);
-
-            } else {
-                File destfile = new File(destFile.getAbsolutePath() + "\\" + srcfile.getAbsolutePath().split("\\\\")[srcfile.getAbsolutePath().split("\\\\").length - 1]);
-
-                try {
-                    copy(srcfile.getAbsolutePath(), destfile.getAbsolutePath());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-    }
-
-    // 单txt文件复制
-    void copy(String srcFile, String destFile) throws IOException {
-        BufferedOutputStream bw = new BufferedOutputStream(new FileOutputStream(destFile));
-        BufferedInputStream br = new BufferedInputStream(new FileInputStream(srcFile));
-
-        bw.write(br.readAllBytes());
-
-        bw.flush();
-        bw.close();
-        br.close();
-    }
-}
 
 public class Test_8_2 {
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         FileClassCopy fileClassCopy = new FileClassCopy();
         fileClassCopy.allCopy("D:\\Ubuntu_Test", "D:\\test");
+        System.out.println("单线程文件夹拷贝耗时：" + (System.currentTimeMillis() - start) / 1000.0 + "s");
     }
 }
