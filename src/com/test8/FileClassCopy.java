@@ -41,7 +41,7 @@ public class FileClassCopy {
                 File destfile = new File(destFile.getAbsolutePath() + "\\" + srcfile.getAbsolutePath().split("\\\\")[srcfile.getAbsolutePath().split("\\\\").length - 1]);
 
                 try {
-                    copy(srcfile.getAbsolutePath(), destfile.getAbsolutePath());
+                    singleCopy(srcfile.getAbsolutePath(), destfile.getAbsolutePath());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -51,7 +51,7 @@ public class FileClassCopy {
     }
 
     // 单txt文件复制
-    public void copy(String srcFile, String destFile) throws IOException {
+    public void singleCopy(String srcFile, String destFile) throws IOException {
         BufferedOutputStream bw = new BufferedOutputStream(new FileOutputStream(destFile));
         BufferedInputStream br = new BufferedInputStream(new FileInputStream(srcFile));
 
