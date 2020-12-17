@@ -1,5 +1,7 @@
 package com.test10;
 
+//TODO 倒序索引
+
 import com.hankcs.hanlp.dictionary.stopword.CoreStopWordDictionary;
 import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
