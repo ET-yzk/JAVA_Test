@@ -1,7 +1,9 @@
 package com.test8;
 
 import java.io.*;
+import java.math.BigDecimal;
 
+// 这个类内部耦合太高
 public class FileClassCopy {
     // 文件夹复制
     public void allCopy(String srcPath, String destPath) {
@@ -60,5 +62,23 @@ public class FileClassCopy {
         bw.flush();
         bw.close();
         br.close();
+    }
+
+    //文件夹容量
+    public BigDecimal directorySize(File srcFile) {
+        File[] srcList = srcFile.listFiles();
+        BigDecimal size = new BigDecimal("0");
+
+        for (File srcfile : srcList) {
+            if (srcfile.isDirectory()) {
+//                size = size.add(BigInteger.valueOf(srcfile.length()));
+                // 递归新的目录
+                size = size.add(directorySize(srcfile));
+            }
+            else {
+                size = size.add(BigDecimal.valueOf(srcfile.length()));
+            }
+        }
+        return size;
     }
 }
