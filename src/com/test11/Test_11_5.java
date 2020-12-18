@@ -57,12 +57,7 @@ class PetShop {
     // 按宠物得分平均值降序排序
     void sort() {
 
-        pets.sort(new Comparator<>() {
-            @Override
-            public int compare(Pet o1, Pet o2) {
-                return (int) (o2.average - o1.average);
-            }
-        });
+        pets.sort((o1, o2) -> (int) (o2.average - o1.average));
     }
 
     // 输出所有宠物信息
