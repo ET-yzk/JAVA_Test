@@ -9,4 +9,15 @@
 package com.test11;
 
 public class Test_11_3 {
+    public static void main(String[] args) {
+        String[] str = {"a","b","c","d"};
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j <4; j++) {
+                System.out.println(str[i] + str[j] + str[j] + str[i]);
+            }
+        }
+    }
 }
+
+//实现类似python字符串的乘法：a * 2 -> aa
+//System.out.println(new String(new char[4]).replace("\0", str[i]));

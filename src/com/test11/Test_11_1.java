@@ -50,7 +50,7 @@ public class Test_11_1 {
         String copiedFilePath = "D:\\test";
 
         CopyScaleRunnable csr = new CopyScaleRunnable(copiedFilePath);
-        Thread tr = new Thread(csr);
+        Thread tr = new Thread(csr);// 创建子线程用于计算复制进度
 //        大二上\JAVA实验\JAVA_test\src
 
         System.out.println("正在计算目标文件(夹)大小...");
