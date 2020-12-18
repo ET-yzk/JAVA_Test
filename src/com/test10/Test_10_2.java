@@ -124,7 +124,7 @@ public class Test_10_2 {
         t3.join();
 
         fileInfo.print(hashMapInfo.hNum, hashMapInfo.hFile, fileInfo.f4);
-        System.setOut(System.out);
+//        System.setOut(System.out);// 这里是希望把sout输出锁定到控制台，这个方法不对
         System.out.println("倒序索引建立完毕，耗时：" + (System.currentTimeMillis() - startTime) / 1000.0 + "s");
     }
 }
