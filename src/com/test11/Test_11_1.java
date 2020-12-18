@@ -27,7 +27,7 @@ class CopyScaleRunnable implements Runnable{
 
         while (size.compareTo(fileClassSize) != 0) {
             try {
-                Thread.sleep(1500);
+                Thread.sleep(1500); // 等待1.5秒
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

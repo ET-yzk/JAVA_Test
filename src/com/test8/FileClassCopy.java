@@ -71,7 +71,7 @@ public class FileClassCopy {
 
         for (File srcfile : srcList) {
             if (srcfile.isDirectory()) {
-//                size = size.add(BigInteger.valueOf(srcfile.length()));
+//                size = size.add(BigInteger.valueOf(srcfile.length()));// 文件夹自身的大小
                 // 递归新的目录
                 size = size.add(directorySize(srcfile));
             }
