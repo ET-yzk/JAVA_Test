@@ -12,7 +12,7 @@ package com.test11;
 
 import java.util.*;
 
-class RandomStr {
+class RandomData {
     Random random = new Random(System.currentTimeMillis());
 
     // 随机生成由[a-z]构成的长为length的字符串
@@ -34,7 +34,7 @@ class RandomStr {
 
 public class Test_11_4 {
     public static void main(String[] args) {
-        RandomStr rs = new RandomStr();
+        RandomData rs = new RandomData();
         Scanner sc = new Scanner(System.in);
         int giftNum = 5;// 礼物编号[0,max],max为奇数，总礼物数为 max+1
         int inNum;// 输入的正整数
@@ -48,6 +48,10 @@ public class Test_11_4 {
         ArrayList<Map.Entry<StringBuffer, Integer>> giftList= new ArrayList<>(giftDir.entrySet());
         System.out.println("请随机输入一个正整数进行抽奖，输入-1查看剩余奖品数：");
         while ((inNum = sc.nextInt()) != 0) {
+            if (inNum < -1) {
+                System.out.println("请正确输入！");
+                continue;
+            }
             if (inNum == -1) {
                 System.out.println("奖品剩余数：" + (giftNum + 1));
             }
