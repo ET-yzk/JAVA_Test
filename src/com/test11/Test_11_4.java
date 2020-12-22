@@ -36,7 +36,7 @@ public class Test_11_4 {
     public static void main(String[] args) {
         RandomData rs = new RandomData();
         Scanner sc = new Scanner(System.in);
-        int giftNum = 5;// 礼物编号[0,max],max为奇数，总礼物数为 max+1
+        int giftNum = 999;// 礼物编号[0,max],max为奇数，总礼物数为 max+1
         int inNum;// 输入的正整数
         int randomGiftNum;// 随机生成的礼物编号
 
@@ -47,7 +47,17 @@ public class Test_11_4 {
 
         ArrayList<Map.Entry<StringBuffer, Integer>> giftList= new ArrayList<>(giftDir.entrySet());
         System.out.println("请随机输入一个正整数进行抽奖，输入-1查看剩余奖品数：");
-        while ((inNum = sc.nextInt()) != 0) {
+        while (true) {
+            //TODO 判断数据是否合法
+            try{
+                inNum = Integer.valueOf(sc.nextLine());
+            }catch(NumberFormatException e){
+                System.out.println("输入数据不合理，请重新输入！");
+                continue;
+            }
+            if (inNum == 0) {
+                break;
+            }
             if (inNum < -1) {
                 System.out.println("请正确输入！");
                 continue;
