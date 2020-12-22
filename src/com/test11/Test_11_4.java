@@ -50,7 +50,7 @@ public class Test_11_4 {
         while (true) {
             //TODO 判断数据是否合法
             try{
-                inNum = Integer.valueOf(sc.nextLine());
+                inNum = Integer.parseInt(sc.nextLine());
             }catch(NumberFormatException e){
                 System.out.println("输入数据不合理，请重新输入！");
                 continue;
@@ -59,7 +59,7 @@ public class Test_11_4 {
                 break;
             }
             if (inNum < -1) {
-                System.out.println("请正确输入！");
+                System.out.println("请正确输入数字！");
                 continue;
             }
             if (inNum == -1) {
