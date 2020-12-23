@@ -26,9 +26,9 @@ public class Test_3_3 {
         long day;
         Date startDate = changeDateLine(dateLine);
 
-        Calendar startYear = Calendar.getInstance();
+//        Calendar startYear = Calendar.getInstance();
         //规定高考日期为18岁的6月7日
-        int endYear = startYear.get(Calendar.YEAR) + 18;
+        int endYear = Integer.valueOf(dateLine.substring(0,4)) + 18;
         Date endDate = changeDateLine(endYear+"-06-07");
 
         day = (Objects.requireNonNull(endDate).getTime() - Objects.requireNonNull(startDate).getTime())/(60*60*24*1000);

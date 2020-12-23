@@ -39,9 +39,9 @@ class Finder {
         }
     }
 
-    void findTF(Finder finder, File file) {
+    void findTF(Finder finder, File file, String fileType) {
         if (!finder.bBoolean) {
-            System.out.println(file.getName() + ": 没有.jpg文件");
+            System.out.println(file.getName() + ": 没有" + fileType + "文件");
         }
     }
 
@@ -60,13 +60,13 @@ public class Test_8_1 {
 
         System.out.println("查找本目录下的.java文件:");
         finder.findFile("java", file);
-        finder.findTF(finder, file);
+        finder.findTF(finder, file, "java");
 
         finder.setaBoolean(false);
         System.out.println();
 
         System.out.println("查找本目录下的.jpg文件:");
         finder.findFile("jpg", file);
-        finder.findTF(finder, file);
+        finder.findTF(finder, file, "jpg");
     }
 }
