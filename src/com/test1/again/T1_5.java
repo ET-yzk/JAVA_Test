@@ -9,6 +9,7 @@ package com.test1.again;
 
 import java.util.Scanner;
 
+//TODO 算法的核心在于将上层的n-1个圆盘当成一个整体，将问题递归拆分
 class Hanoi {
     // 移动次数
     int m = 0;
