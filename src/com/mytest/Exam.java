@@ -86,12 +86,12 @@ public class Exam {
     int qq = 0;
     public static void main(String[] args) {
         XZT xzt = new XZT();
-        xzt.t19();
+        new Zi("");//调用子类无参构造方法进行初始化，会优先调用直接父类(即调用最亲的一个)的无参构造方法，且父类中需要无参构造器
 
-        //t31
-        System.out.println(q);
-        System.out.println(new Exam().qq);// static修饰的方法要通过new一个实例类来访问
-        System.out.println((int)'0');
+//        //t31
+//        System.out.println(q);
+//        System.out.println(new Exam().qq);// static修饰的方法要通过new一个实例类来访问
+//        System.out.println((int)'0');
 
     }
 }
@@ -117,6 +117,10 @@ class Fu {
     Fu() {
         System.out.println("fu无参构造方法");
     }
+
+    Fu(String str) {
+        System.out.println("fu有参构造方法");
+    }
 }
 
 class Zi extends Fu {
@@ -126,11 +130,13 @@ class Zi extends Fu {
     }
 
     Zi() {
+//        this("");
         System.out.println("zi无参构造方法");
     }
 
     Zi(String str) {
+        this();
         System.out.println("zi有参构造方法");
     }
-    //调用子类无参构造方法进行初始化，会优先调用直接父类的无参构造方法
+    //调用子类无参构造方法进行初始化，会优先调用直接父类的无参构造方法，且父类中需要无参构造器
 }
