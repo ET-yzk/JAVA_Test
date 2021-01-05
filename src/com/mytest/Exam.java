@@ -81,12 +81,16 @@ abstract class t25 {
     t25() {}
 }
 
+//TODO main
 public class Exam {
     static int q = 1;
     int qq = 0;
     public static void main(String[] args) {
         XZT xzt = new XZT();
-        new Zi("");//调用子类无参构造方法进行初始化，会优先调用直接父类(即调用最亲的一个)的无参构造方法，且父类中需要无参构造器
+//        new Zi("");//调用子类无参构造方法进行初始化，会优先调用直接父类(即调用最亲的一个)的无参构造方法，且父类中需要无参构造器
+        Fu zi = new Zi();// 多态
+        ((Zi) zi).fu("");// 不能用zi.fu()因为多态方式在编译时看左边的定义类，运行时才优先右侧类查找
+        zi.fu();
 
 //        //t31
 //        System.out.println(q);
@@ -115,6 +119,7 @@ class Fu {
     }
 
     Fu() {
+//        this("");
         System.out.println("fu无参构造方法");
     }
 
@@ -126,7 +131,12 @@ class Fu {
 class Zi extends Fu {
     @Override
     void fu() {
-        System.out.println("zi");
+        System.out.println("zi重写");
+    }
+
+    void fu(String str) {
+        super.fu();
+        System.out.println("zi重载");
     }
 
     Zi() {
