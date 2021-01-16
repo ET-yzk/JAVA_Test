@@ -91,6 +91,8 @@ public class Exam {
         Fu zi = new Zi();// 多态
         ((Zi) zi).fu("");// 不能用zi.fu()因为多态方式在编译时看左边的定义类，运行时才优先右侧类查找
         zi.fu();
+        ((Zi) zi).zi();
+        zi.fu2();
 
 //        //t31
 //        System.out.println(q);
@@ -123,6 +125,10 @@ class Fu {
         System.out.println("fu无参构造方法");
     }
 
+    void fu2() {
+        System.out.println("fu特有方法");
+    }
+
     Fu(String str) {
         System.out.println("fu有参构造方法");
     }
@@ -137,6 +143,10 @@ class Zi extends Fu {
     void fu(String str) {
         super.fu();
         System.out.println("zi重载");
+    }
+
+    void zi() {
+        System.out.println("zi特有方法");
     }
 
     Zi() {
