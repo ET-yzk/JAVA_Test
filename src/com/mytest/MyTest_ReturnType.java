@@ -32,11 +32,6 @@ public class MyTest_ReturnType {
        type.GetSort(1.2f);
 
        type.GetSort(1.2,3.2);
-
-       short i = 32;
-       long j = 64;
-//       i = j; // 无法转换
-       j = i;
     }
 
 }

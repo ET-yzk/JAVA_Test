@@ -35,7 +35,7 @@ class XZT {
         }
         System.out.println(a.hashCode());
         System.out.println(a);
-        System.out.println(a.length());
+//        System.out.println(a.length());
     }
 
     //t12 【true小写】【选择语句 judge?true:false】
@@ -68,6 +68,17 @@ class XZT {
             System.out.println(XZT.this.q);//内部类调用重名外部类变量：XZT.this.q
         }
     }
+
+    void myt1() {
+        int b;
+        int a = b = 2;
+        System.out.println(a *- b);// 这里的-代表单目运算符负号
+    }
+
+    void myt2() {
+        System.out.println(5 % 3);
+        System.out.println(-5 % 3);// 取余，向0取，余数符号余被除数一致
+    }
 }
 
 abstract class t25 {
@@ -99,6 +110,7 @@ public class Exam {
 //        System.out.println(new Exam().qq);// static修饰的方法要通过new一个实例类来访问
 //        System.out.println((int)'0');
 
+        xzt.t11();
     }
 }
 
